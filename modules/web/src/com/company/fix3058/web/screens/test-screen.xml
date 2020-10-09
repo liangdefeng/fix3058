@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://caption"
+        messagesPack="com.company.fix3058.web.screens">
+    <data>
+        <collection id="countryGrowthEntitiesDc" class="com.company.fix3058.entity.CountryGrowthEntity">
+            <view extends="_local"/>
+            <loader id="countryGrowthEntitiesDl">
+                <query>
+                    <![CDATA[select e from fix3058_CountryGrowthEntity e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+
+        <dataGrid
+                id="countryGrowthEntitiesTable"
+                height="100px"
+                width="200px"
+                dataContainer="countryGrowthEntitiesDc">
+            <columns>
+                <column id="year2020" property="year2020">
+                    <numberRenderer format="%.1f%%"/>
+                </column>
+            </columns>
+        </dataGrid>
+    </layout>
+</window>
